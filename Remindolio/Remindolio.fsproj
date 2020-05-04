@@ -66,6 +66,9 @@
     <Reference Include="System.ValueTuple">
       <Private>True</Private>
     </Reference>
+    <Reference Include="ToastLibrary">
+      <HintPath>..\ToastLibrary\bin\Debug\ToastLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="ToastNotifications">
       <HintPath>..\packages\ToastNotifications.2.5.1\lib\net40\ToastNotifications.dll</HintPath>
     </Reference>
