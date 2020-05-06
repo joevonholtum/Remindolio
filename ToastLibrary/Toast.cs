@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
 using ToastNotifications;
 using ToastNotifications.Lifetime;
 using ToastNotifications.Position;
-using System.Windows;
-using System.Windows.Threading;
 
 namespace ToastLibrary
 {
@@ -20,8 +16,8 @@ namespace ToastLibrary
                 cfg.PositionProvider = new WindowPositionProvider(
                     parentWindow: targetWindow,
                     corner: Corner.TopRight,
-                    offsetX: 10,
-                    offsetY: 10
+                    offsetX: 0,
+                    offsetY: 0
                 );
 
                 cfg.LifetimeSupervisor = new TimeAndCountBasedLifetimeSupervisor(

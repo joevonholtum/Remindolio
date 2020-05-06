@@ -11,14 +11,31 @@ type Reminder = {
     Text: string
 }
 
-let firstReminder = { Name = "first"; Text = "This is the first reminder"; }
+let random = Random()
+
+let getReminderAtIndex (reminderList:List<Reminder>, index:int) = 
+    reminderList.Item(index)
+
+let testReminder = { Name = "first"; Text = "This is the first reminder"; }
+let breathe = { Name = "breathe"; Text = "Take a deep breath. Fill your lungs!" }
+let posture = { Name = "posture"; Text = "Are you hunched over and carrying tension?" }
+
+let reminders = [testReminder; breathe; posture;]
+ 
+let hideWindow (window:Window) =
+    window.Width <- (float)0
+    window.Height <- (float)0
+    window.WindowStyle <- WindowStyle.None
+
+let showReminder (rem:Reminder, window:Window) =
+    let toastman = Toast()
+    let theNotifier = toastman.GetANotifier(window, Application.Current.Dispatcher)
+    theNotifier.ShowSuccess(rem.Text)
 
 let initialize (mainWindow:Window) =
-    let thisTest = mainWindow.FindName("test") :?> TextBlock
-    thisTest.Text <- firstReminder.Text
-    let toastman = Toast()
-    let newNotifier = toastman.GetANotifier(mainWindow, Application.Current.Dispatcher)
-    newNotifier.ShowSuccess("Message")
+    let max = reminders.Length
+    let chosenReminder = getReminderAtIndex(reminders, random.Next(0, max))
+    showReminder(chosenReminder, mainWindow)
 
 [<STAThread>]
 [<EntryPoint>]
