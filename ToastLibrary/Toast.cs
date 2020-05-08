@@ -9,7 +9,7 @@ namespace ToastLibrary
 {
     public class Toast
     {
-        public Notifier GetANotifier(Window targetWindow, Dispatcher dis)
+        public Notifier GetNotifier(Window targetWindow, Dispatcher dis)
         {
             var notifier = new Notifier(cfg =>
             {

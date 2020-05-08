@@ -22,7 +22,7 @@
     <Tailcalls>false</Tailcalls>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <WarningLevel>3</WarningLevel>
+    <WarningLevel>2</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
@@ -47,11 +47,12 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Main.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
     <Resource Include="MainWindow.xaml" />
     <Resource Include="App.xaml" />
+    <Compile Include="Reminders\ReminderHandler.fs" />
+    <Compile Include="Main.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
